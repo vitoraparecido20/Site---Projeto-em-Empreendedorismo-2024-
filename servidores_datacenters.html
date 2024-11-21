@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servidores Data Centers</title>
+    <style>
+        .product-details {
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 16px;
+            border: 1px solid #ddd;
+        }
+        .product-details img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-details button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .product-details button:hover {
+            background-color: #218838;
+        }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .navigation-buttons button {
+            background-color: #007bff;
+        }
+        .navigation-buttons button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="product-details">
+    <img src="servidoresdatacenters.jpg" alt="Servidores Data Centers">
+    <h1>Servidores Data Centers</h1>
+    <p><strong>Preço:</strong> R$ 15.000,00</p>
+    <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+
+    <!-- Botões de navegação -->
+    <div class="navigation-buttons">
+        <button onclick="window.location.href='miniprojetor.html'">Produto Anterior</button>
+        <button onclick="window.location.href='totem.html'">Próximo Produto</button>
+    </div>
+</div>
+
+<script>
+    function adicionarAoCarrinho() {
+        const produto = {
+            nome: "Servidores Data Centers",
+            preco: 15000.00,
+            imagem: "servidores_datacenters.jpg"
+        };
+        const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+        carrinho.push(produto);
+        localStorage.setItem("carrinho", JSON.stringify(carrinho));
+        alert("Produto adicionado ao carrinho!");
+    }
+</script>
+</body>
+</html>
